@@ -74,5 +74,6 @@ require("./app/routes/tutorial.routes.js")(app);
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
-  console.log(`Env ${process.env["DB_PORT"]}`)
+  console.log(`Env ${process.env["DB_PORT"]}`);
+  console.log(`Username: ${process.env["SPRING_DATASOURCE_USERNAME"]}`);
 });
