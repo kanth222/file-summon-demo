@@ -23,7 +23,8 @@ RUN curl -sSL https://raw.githubusercontent.com/cyberark/summon/master/install.s
 # and    https://github.com/cyberark/summon-conjur#install
 ENV PATH="/usr/local/lib/summon:${PATH}"
 
-#COPY /usr/local/lib/summon /usr/local/lib/summon
+#:wq
+COPY /usr/local/lib/summon /usr/local/lib/summon
 #COPY /usr/local/bin/summon /usr/local/bin/summon
 
 # RUN sleep 60
@@ -36,4 +37,5 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["summon", "--provider", "summon-conjur", "-f", "/opt/etc/secrets.yml", "node", "server.js" ]
+CMD ["summon", "--provider", "summon-conjur", "-f", "/opt/etc/secrets.yaml", "node", "server.js" ]
+#CMD ["node", "server.js" ]

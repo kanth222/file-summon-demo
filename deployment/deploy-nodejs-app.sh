@@ -3,6 +3,7 @@
 # set -a
 # source "./../../../../.env"
 # set +a
+APP_NAMESPACE=bnl-demo-app-ns
 
 kubectl config set-context --current --namespace="$APP_NAMESPACE"
 
@@ -26,7 +27,7 @@ kubectl create configmap summon-config-sidecar --from-file=secrets.yml
 rm secrets.yml
 
 # DEPLOYMENT
-envsubst < summon-k8-deployment.yml | kubectl replace --force -f -
+envsubst < summon-k8-deployment.yaml | kubectl replace --force -f -
 if ! kubectl wait deployment demo-nodejs-app-summon-sidecar --for condition=Available=True --timeout=90s
   then exit 1
 fi

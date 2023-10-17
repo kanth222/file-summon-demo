@@ -19,7 +19,7 @@ spec:
       containers:
         - name: demo-nodejs-app-summon-sidecar
           imagePullPolicy: IfNotPresent
-          image: bnasslahsen/conjur-spring-boot-demos-summon
+          image: kanth22/summon-nodejs-app:1.0
           env:
             - name: CONJUR_AUTHN_TOKEN_FILE
               value: /run/conjur/access-token
