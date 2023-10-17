@@ -75,5 +75,8 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
   console.log(`Env ${process.env["DB_PORT"]}`);
+  console.log(`Env ${process.env["DB_USER"]}`);
+  console.log(`Env ${process.env["DB_HOST"]}`);
+  console.log(`Env ${process.env["DB_PASSWORD"]}`);
   console.log(`Username: ${process.env["SPRING_DATASOURCE_USERNAME"]}`);
 });
