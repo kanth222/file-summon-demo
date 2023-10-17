@@ -18,7 +18,7 @@ spec:
       serviceAccountName: demo-app-summon-sidecar-sa
       containers:
         - name: demo-nodejs-app-summon-sidecar
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           image: kanth22/summon-nodejs-app:1.7
           env:
             - name: CONJUR_AUTHN_TOKEN_FILE
