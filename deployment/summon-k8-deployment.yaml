@@ -19,7 +19,7 @@ spec:
       containers:
         - name: demo-nodejs-app-summon-sidecar
           imagePullPolicy: IfNotPresent
-          image: kanth22/summon-nodejs-app:1.0
+          image: kanth22/summon-nodejs-app:1.5
           env:
             - name: CONJUR_AUTHN_TOKEN_FILE
               value: /run/conjur/access-token
@@ -32,9 +32,9 @@ spec:
             - mountPath: /run/conjur
               name: conjur-access-token
               readOnly: true
-            - mountPath: /etc/summon
-              name: summon-config
-              readOnly: true
+            # - mountPath: /etc/summon
+            #   name: summon-config
+            #   readOnly: true
         - image: cyberark/conjur-kubernetes-authenticator
           name: configurator
           imagePullPolicy: IfNotPresent
@@ -45,10 +45,10 @@ spec:
             - configMapRef:
                 name: conjur-connect
       volumes:
-        - name: summon-config
-          configMap:
-            name: summon-config-sidecar
-            defaultMode: 420
+        # - name: summon-config
+        #   configMap:
+        #     name: summon-config-sidecar
+        #     defaultMode: 420
         - name: conjur-access-token
           emptyDir:
             medium: Memory
