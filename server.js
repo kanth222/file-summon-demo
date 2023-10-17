@@ -60,7 +60,7 @@ const tut = require("./app/models/tutorial.model.js");
 
     // // Send the response to the client
     // res.json(response);
-    res.send(`<html><body><h1>${process.env["SPRING_DATASOURCE_USERNAME"]}</h1><br/></body></html>`);
+    res.send(`<html><body><h1>${process.env["SPRING_DATASOURCE_USERNAME"]},${process.env["DB_PORT"]}</h1><br/></body></html>`);
   } catch (error) {
     // Handle any errors that may occur during the request
     res.status(500).json({ error: "Internal server error" });
