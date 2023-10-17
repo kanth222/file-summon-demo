@@ -1,7 +1,7 @@
 module.exports = {
-  HOST: process.env.DB_HOST || "localhost",
+  HOST: process.env.DB_HOST || "172.16.11.53",
   USER: process.env.DB_USER || "root",
-  PASSWORD: process.env.DB_PASSWORD || "password",
-  DB: process.env.DB_NAME || "mydb",
-  PORT: process.env.DB_PORT || "3306"
+  PASSWORD: process.env.DB_PASSWORD || "demo-db",
+  DB: process.env.DB_NAME || "nodedemo",
+  PORT: process.env["DB_PORT"]
 };
