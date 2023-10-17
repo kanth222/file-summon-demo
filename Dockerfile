@@ -36,4 +36,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["summon", "--provider", "summon-conjur", "-f", "/etc/secrets.yml", "node", "server.js" ]
+CMD ["summon", "--provider", "summon-conjur", "-f", "/opt/etc/secrets.yml", "node", "server.js" ]

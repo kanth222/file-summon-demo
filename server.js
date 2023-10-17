@@ -37,20 +37,20 @@ const tut = require("./app/models/tutorial.model.js");
 
   try {
     //res.redirect(`/api/tutorials/${randomId}`)
-    tut.findById(randomId, (err, data) => {
-      //console.log(req.params.id)
-      if (err) {
-        if (err.kind === "not_found") {
-          res.status(404).send({
-            message: `Not found Tutorial with id ${randomId}.`
-          });
-        } else {
-          res.status(500).send({
-            message: "Error retrieving Tutorial with id " + randomId
-          });
-        }
-      } else res.send(data);
-    });
+    // tut.findById(randomId, (err, data) => {
+    //   //console.log(req.params.id)
+    //   if (err) {
+    //     if (err.kind === "not_found") {
+    //       res.status(404).send({
+    //         message: `Not found Tutorial with id ${randomId}.`
+    //       });
+    //     } else {
+    //       res.status(500).send({
+    //         message: "Error retrieving Tutorial with id " + randomId
+    //       });
+    //     }
+    //   } else res.send(`<html><body><h1>${process.env["dummy"]}</h1><br/>${data}</body></html>`);
+    // });
     // Make an internal HTTP request to /api/tutorials/:id
     // console.log(randomId)
     // const response = await request.get({
@@ -60,6 +60,7 @@ const tut = require("./app/models/tutorial.model.js");
 
     // // Send the response to the client
     // res.json(response);
+    res.send(`<html><body><h1>${process.env["SPRING_DATASOURCE_USERNAME"]}</h1><br/></body></html>`);
   } catch (error) {
     // Handle any errors that may occur during the request
     res.status(500).json({ error: "Internal server error" });
