@@ -24,7 +24,7 @@ RUN curl -sSL https://raw.githubusercontent.com/cyberark/summon/master/install.s
 ENV PATH="/usr/local/lib/summon:${PATH}"
 
 #:wq
-COPY /usr/local/lib/summon /usr/local/lib/summon
+#COPY /usr/local/lib/summon /usr/local/lib/summon
 #COPY /usr/local/bin/summon /usr/local/bin/summon
 
 # RUN sleep 60
