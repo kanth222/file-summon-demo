@@ -29,7 +29,7 @@ ENV PATH="/usr/local/lib/summon:${PATH}"
 
 # RUN sleep 60
 
-COPY ./secrets.yaml /opt/etc/secrets.yaml
+COPY ./secrets.yaml /opt/etc/secrets.yml
 
 RUN npm install
 
@@ -37,5 +37,5 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["summon", "--provider", "summon-conjur", "-f", "/opt/etc/secrets.yaml", "node", "server.js" ]
+CMD ["summon", "--provider", "summon-conjur", "-f", "/opt/etc/secrets.yml", "node", "server.js" ]
 #CMD ["node", "server.js" ]
