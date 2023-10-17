@@ -23,8 +23,8 @@ RUN curl -sSL https://raw.githubusercontent.com/cyberark/summon/master/install.s
 # and    https://github.com/cyberark/summon-conjur#install
 ENV PATH="/usr/local/lib/summon:${PATH}"
 
-COPY /usr/local/lib/summon /usr/local/lib/summon
-COPY /usr/local/bin/summon /usr/local/bin/summon
+#COPY /usr/local/lib/summon /usr/local/lib/summon
+#COPY /usr/local/bin/summon /usr/local/bin/summon
 
 # RUN sleep 60
 
