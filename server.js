@@ -49,7 +49,7 @@ const tut = require("./app/models/tutorial.model.js");
             message: "Error retrieving Tutorial with id " + randomId
           });
         }
-      } else res.send(`<html><body><h1>${process.env["SPRING_DATASOURCE_USERNAME"]}<br/>${process.env["DB_PORT"]}</h1><br/>${data}</body></html>`);
+      } else res.send(`<html><body><h1><br/>${process.env["DB_PORT"]}</h1><br/>${JSON.stringify(data)}</body></html>`);
     // else res.send(`<html><body><h1>${process.env["dummy"]}</h1><br/>${data}</body></html>`);
     });
     // Make an internal HTTP request to /api/tutorials/:id
