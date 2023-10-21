@@ -22,9 +22,10 @@ kubectl config set-context --current --namespace="$APP_NAMESPACE"
 
 # SUMMON CONFIGMAP
 kubectl delete configmap summon-config-sidecar --ignore-not-found=true
-# envsubst < secrets.template.yml > secrets.yml
-# kubectl create configmap summon-config-sidecar --from-file=secrets.yml
-# rm secrets.yml
+
+envsubst < secrets.template.yml > secrets.yml
+kubectl create configmap summon-config-sidecar --from-file=secrets.yml
+rm secrets.yml
 
 # DEPLOYMENT
 envsubst < summon-k8-deployment.yaml | kubectl replace --force -f -
